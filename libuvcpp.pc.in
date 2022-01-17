@@ -1,0 +1,11 @@
+libdir=@CMAKE_INSTALL_PREFIX@/@CMAKE_INSTALL_LIBDIR@
+includedir=@CMAKE_INSTALL_PREFIX@/@CMAKE_INSTALL_INCLUDEDIR@
+
+Name: libuvcpp
+Description: @libuvcpp_DESCRIPTION@
+URL: @libuvcpp_URL@
+Version: @libuvcpp_VERSION@
+Libs: -L${libdir} -luvcpp
+Libs.private: -libuvc
+Cflags: -I${includedir}
+Requires: libuvc

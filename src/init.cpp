@@ -30,4 +30,24 @@
 
 namespace libuvcpp
 {
+
+UvcContext::UvcContext()
+{
+  uvc_error_t res;
+
+  res = uvc_init(&m_ctx, NULL);
+
+  if (res < 0) {
+    uvc_perror(res, "UvcContext init");
+    return;
+  }
+}
+
+UvcContext::~UvcContext()
+{
+  if (m_ctx != nullptr) {
+    uvc_exit(m_ctx);
+  }
+}
+
 }  // namespace libuvcpp

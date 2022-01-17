@@ -29,10 +29,21 @@
 #ifndef LIBUVCPP__LIBUVCPP_HPP_
 #define LIBUVCPP__LIBUVCPP_HPP_
 
-#include <string>
+#include <libuvc/libuvc.h>
 
 namespace libuvcpp
 {
+
+class UvcContext
+{
+public:
+  UvcContext();
+  ~UvcContext();
+
+private:
+  uvc_context_t * m_ctx = nullptr;
+};
+
 }  // namespace libuvcpp
 
 #endif  // LIBUVCPP__LIBUVCPP_HPP_
